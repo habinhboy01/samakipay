@@ -1,3 +1,5 @@
+// menu pc
+
 // menu mobile
 
 $('.icon-bar').on('click', function() {
@@ -5,6 +7,19 @@ $('.icon-bar').on('click', function() {
 })
 
 // menu footer
+
+var active_footer = document.querySelectorAll('ul.menu-footer > li > a');
+
+active_footer.forEach(function (element) {
+    element.id = 'active_footer';
+})
+
+var active_footer2 = document.querySelectorAll('ul.menu-footer2 > li > a');
+
+active_footer2.forEach(function (element) {
+    element.id = 'active_footer';
+})
+
 
 $('.icon-footer').on('click', function() {
     $('.menu-footer').slideToggle();
@@ -91,3 +106,25 @@ $('.carousel_3').owlCarousel({
         }
     }
 })
+
+// // prevent copy cut, f12 in website
+
+  jQuery("body").bind("cut copy", function (e) {
+    e.preventDefault();
+  });
+
+  jQuery(document).keydown(function (event) {
+    if (event.keyCode == 123) { // Prevent F12
+      return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+      return false;
+    }
+  });
+
+  // prenvent mouse right
+  jQuery(document).on("contextmenu", function (e) {      
+      e.preventDefault();
+  });
+  
+  
+  

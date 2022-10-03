@@ -5,20 +5,22 @@
 
 */
 get_header(); ?>
-
-	<div class="intro-about">
-		<?php 
-            $image = get_field('img-intro-dynamic');
-            if( !empty( $image ) ): ?>
-                <img class="img-about" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <?php endif; ?>
-
-        <div class="bg-intro2 bg-about">
-
-        	<h1 class="text-about"><?php echo get_field('title-dynamic'); ?></h1>
-
-        </div>
-	</div>
+    
+    <div class="container">
+    	<div class="intro-about">
+    		<?php 
+                $image = get_field('img-intro-dynamic');
+                if( !empty( $image ) ): ?>
+                    <img class="img-about" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php endif; ?>
+    
+            <div class="bg-intro2 bg-about">
+    
+            	<!--<h1 class="text-about"><?php echo get_field('title-dynamic'); ?></h1>-->
+    
+            </div>
+    	</div>
+    </div>
 
 	<!-- HỆ THỐNG UPS ĐỘNG -->
 
@@ -101,5 +103,11 @@ get_header(); ?>
 		     </div>
 		</div>
 	</div>
+	
+	<div class="container">
+        <div class="about-yotube">
+    	    <?php the_field('youtube') ?>
+    	</div>
+    </div>
 
 <?php get_footer(); ?>

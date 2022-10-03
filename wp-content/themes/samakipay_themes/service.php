@@ -6,20 +6,22 @@
 */
 
 get_header(); ?>
-
-	<div class="intro-about">
-		<?php 
-            $image = get_field('img-intro');
-            if( !empty( $image ) ): ?>
-                <img class="img-about" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <?php endif; ?>
-
-        <div class="bg-intro2 bg-about">
-
-        	<h1 class="text-about"><?php echo get_field('title-service'); ?></h1>
-
-        </div>
-	</div>
+    
+    <div class="container">
+    	<div class="intro-about">
+    		<?php 
+                $image = get_field('img-intro');
+                if( !empty( $image ) ): ?>
+                    <img class="img-about" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php endif; ?>
+    
+            <div class="bg-intro2 bg-about">
+    
+            	<!--<h1 class="text-about"><?php echo get_field('title-service'); ?></h1>-->
+    
+            </div>
+    	</div>
+    </div>
 
 	<div class="container bg-railway2">
 		<div class="row">
@@ -116,6 +118,15 @@ get_header(); ?>
 
 	        	<?php endwhile; ?>
 	        <?php endif; ?>
+		</div>
+		
+		
+		<div class="list-construction2">
+		    
+		    <div class="list-construction">
+		        <?php the_field('list-youtube') ?>
+		    </div>
+		    
 		</div>
 	</div>
 

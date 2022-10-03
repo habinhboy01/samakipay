@@ -1,36 +1,35 @@
 <?php
 /*
 
-	Template Name: Solution For Oil & Gas
+    Template Name: Solution For Oil & Gas
 
 */
 
 get_header(); ?>
-
-	<div class="intro-about">
-		<?php 
-            $image = get_field('img-onshore');
-            if( !empty( $image ) ): ?>
-                <img class="img-about" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <?php endif; ?>
-
-        <div class="bg-intro2 bg-about">
-
-        	<h1 class="text-about"><?php echo get_field('title-onshore'); ?></h1>
-
+    
+    <div class="container">
+        <div class="intro-about">
+            <?php 
+                $image = get_field('img-onshore');
+                if( !empty( $image ) ): ?>
+                    <img class="img-about" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php endif; ?>
+    
+            <div class="bg-intro2 bg-about">
+    
+                <!--<h1 class="text-about"><?php echo get_field('title-onshore'); ?></h1>-->
+    
+            </div>
         </div>
-	</div>
+    </div>
 
     <div class="container">
         <h2 class="text-home8 text-onshore2"><?php echo get_field('onshore'); ?></h2>
+        
+        <div class="text-onshore">
+            <?php the_field('description-onshore') ?>
+        </div>
 
-        <?php if( have_rows('description-onshore') ): ?>
-            <?php while( have_rows('description-onshore') ): the_row(); ?>
-
-                <p class="text-onshore"><?php the_sub_field('content'); ?></p>
-
-            <?php endwhile; ?>
-        <?php endif; ?>
     </div>
 
     <div class="container">
@@ -82,13 +81,10 @@ get_header(); ?>
     <div class="container">
         <h2 class="text-home8 text-onshore2"><?php echo get_field('offshore'); ?></h2>
         
-        <?php if( have_rows('description-offshore') ): ?>
-            <?php while( have_rows('description-offshore') ): the_row(); ?>
-
-                <p class="text-onshore"><?php the_sub_field('content'); ?></p>
-
-            <?php endwhile; ?>
-        <?php endif; ?>
+        <div class="text-onshore">
+            <?php the_field('description-offshore') ?>
+        </div>
+        
     </div>
 
     <div class="container">
@@ -129,6 +125,12 @@ get_header(); ?>
 
                 <?php endwhile; ?>
             <?php endif; ?>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="about-yotube">
+            <?php the_field('youtube') ?>
         </div>
     </div>
 

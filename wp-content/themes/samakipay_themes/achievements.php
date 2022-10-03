@@ -35,7 +35,21 @@ get_header(); ?>
 
 	             <?php endwhile; ?>
         	<?php endif; ?>
+		</div>
 
+		<div class="row">
+			<?php if( have_rows('list-achievements2') ): ?>
+	            <?php while( have_rows('list-achievements2') ): the_row(); 
+	                $image = get_sub_field('img');
+	                $picture = $image['sizes']['thumbnail']; 
+	                ?>
+
+	                <div class="col-lg-4 col-md-6 col-12">
+	                	<img class="img-certificates img-achievements" src="<?php echo $picture;?>" alt="<?php echo $image['alt'];?>"> 
+	                </div>
+
+	             <?php endwhile; ?>
+        	<?php endif; ?>
 		</div>
 	</div>
 

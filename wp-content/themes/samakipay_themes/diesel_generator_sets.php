@@ -6,19 +6,21 @@
 */
 get_header(); ?>
 	
-	<div class="intro-about">
-		<?php 
-            $image = get_field('img-intro-diesel');
-            if( !empty( $image ) ): ?>
-                <img class="img-about" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <?php endif; ?>
-
-        <div class="bg-intro2 bg-about">
-
-        	<h1 class="text-about"><?php echo get_field('title-diesel'); ?></h1>
-
-        </div>
-	</div>
+	<div class="container">
+    	<div class="intro-about">
+    		<?php 
+                $image = get_field('img-intro-diesel');
+                if( !empty( $image ) ): ?>
+                    <img class="img-about" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php endif; ?>
+    
+            <div class="bg-intro2 bg-about">
+    
+            	<!--<h1 class="text-about"><?php echo get_field('title-diesel'); ?></h1>-->
+    
+            </div>
+    	</div>
+    </div>
 
 	<div class="container">
 		<?php 
@@ -110,7 +112,13 @@ get_header(); ?>
 	                $picture = $image['sizes']['thumbnail']; ?>
 
 	                <div class="col-lg-4 col-md-6 col-12">
-	                	<img class="product-diesel" src="<?php echo $picture;?>" alt="<?php echo $image['alt'];?>"> 
+	                	<img class="product-diesel" src="<?php echo $picture;?>" alt="<?php echo $image['alt'];?>">
+	                	
+	                	<ul class="product-diesel2">
+	                	    <li><?php echo get_sub_field('text'); ?></li>
+	                	    
+	                	    <li><?php echo get_sub_field('text2'); ?></li>
+	                	</ul>
 	                </div>
 
 	         	<?php endwhile; ?>
@@ -118,5 +126,11 @@ get_header(); ?>
 
 		</div>
 	</div>
+	
+	<div class="container">
+        <div class="about-yotube">
+    	    <?php the_field('youtube') ?>
+    	</div>
+    </div>
 
 <?php get_footer(); ?>

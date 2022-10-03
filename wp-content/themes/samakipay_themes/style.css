@@ -50,12 +50,13 @@
 }
 
 .text-header {
-	font-size: 11px;
+	font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .img-header {
-	width: 100px;
-	height: auto;
+    width: 160px;
+    height: auto;
 }
 
 .bg-pc2 {
@@ -84,6 +85,14 @@
 .main-menu-mobile {
 	display: none;
 }
+
+.current-menu-item a,
+.current-page-ancestor a {
+    background: #006dff;
+    color: white;
+    transition: background-color .2s ease-out,color .2s ease-out;
+}
+
 
 @media(max-width: 1200px) {
 	.menu-pc a,
@@ -154,6 +163,13 @@
 	    font-size: 15px;
 	    font-weight: 600;
 	}
+	
+	.current-menu-item a,
+	.current-page-ancestor a {
+        background: unset;
+        color: #006dff;
+        transition: background-color .2s ease-out,color .2s ease-out;
+    }
 }
 
 
@@ -261,7 +277,11 @@
 	font-size: 20px;
 	position: fixed;
 	bottom: 0;
-	right: 0;
+	right: 30px;
+}
+
+#active_footer {
+    background: unset;
 }
 
 @media(max-width: 991px) {
@@ -284,7 +304,7 @@
 	.icon-footer4  {
 		display: block;
 	}
-
+	
 	.img-footer {
 		width: 30%;
 	}
